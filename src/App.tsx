@@ -441,11 +441,11 @@ export default function App() {
               <div className="flex flex-col gap-6 text-xs text-white/40 leading-relaxed tracking-[0.1em]">
                 <div className="flex items-start gap-4">
                   <MapPin size={16} className="text-luxury-gold shrink-0" />
-                  <span>DIFC, Level 15, <br />The Gate Building, Dubai, UAE</span>
+                  <span>Silicon Oasis, <br />Axis 1 Building, Dubai, UAE</span>
                 </div>
                 <div className="flex items-center gap-4">
                   <Phone size={16} className="text-luxury-gold shrink-0" />
-                  <span>+971 4 582 9900</span>
+                  <span>+971503855279</span>
                 </div>
               </div>
             </div>
