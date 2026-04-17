@@ -161,7 +161,6 @@ const Navbar = () => {
 };
 
 export default function App() {
-  const heroRef = useRef(null);
   const { scrollYProgress } = useScroll();
   const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.2], [1, 0.95]);
@@ -170,7 +169,30 @@ export default function App() {
     <div className="bg-luxury-black text-luxury-beige min-h-screen">
       <div className="noise-overlay fixed inset-0 pointer-events-none z-50 opacity-[0.03]" />
 
-      {/* Floating Action Button */}
+      {/* Floating WhatsApp Button */}
+      <a
+        href="https://wa.me/971567074922"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-28 right-10 z-[95] w-14 h-14 bg-[#25D366] hover:bg-[#20ba5a] 
+                   rounded-full flex items-center justify-center shadow-2xl transition-all 
+                   duration-300 hover:scale-110 active:scale-95 group"
+        aria-label="Chat on WhatsApp"
+      >
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          width="28" 
+          height="28" 
+          fill="white" 
+          viewBox="0 0 24 24"
+          className="group-hover:rotate-12 transition-transform duration-300"
+        >
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.767.966-.94 1.164-.173.198-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.485-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+          <path d="M12 21.75c-5.385 0-9.75-4.365-9.75-9.75S6.615 2.25 12 2.25 21.75 6.615 21.75 12 17.385 21.75 12 21.75zm0-18c-4.687 0-8.5 3.813-8.5 8.5 0 4.687 3.813 8.5 8.5 8.5 4.687 0 8.5-3.813 8.5-8.5 0-4.687-3.813-8.5-8.5-8.5z"/>
+        </svg>
+      </a>
+
+      {/* Floating Email Button */}
       <div className="fixed bottom-10 right-10 z-[100] hidden md:block">
         <motion.a
           whileHover={{ scale: 1.1 }}
@@ -184,7 +206,7 @@ export default function App() {
 
       <Navbar />
 
-      {/* Hero Section - Fixed Text Overlap */}
+      {/* Hero Section */}
       <section 
         id="home" 
         className="relative min-h-screen flex items-center overflow-hidden border-b border-luxury-gold/10 pt-20 md:pt-28 lg:pt-36 pb-12 md:pb-0"
@@ -210,7 +232,6 @@ export default function App() {
                 Dubai / Premium Digital Concierge
               </span>
 
-              {/* FIXED HERO HEADING */}
               <h1 className="text-[2.75rem] sm:text-6xl md:text-7xl lg:text-[5.5rem] xl:text-[7rem] 2xl:text-[9rem] 
                            font-serif leading-[0.88] tracking-[-0.04em] text-white uppercase">
                 We Fix <br />
