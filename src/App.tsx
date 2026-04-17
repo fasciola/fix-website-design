@@ -1,13 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'motion/react';
-import { 
-  Menu, X, ArrowRight, ExternalLink, Mail, Phone, MapPin, 
+import {
+  Menu, X, ArrowRight, ExternalLink, Mail, Phone, MapPin,
   Instagram, Linkedin, Twitter, Sparkles, Quote, ChevronDown,
   Layout, Shield, Zap, Gem, Car, Home, Palette, Microscope
 } from 'lucide-react';
 
 // --- Types & Constants ---
-
 interface Project {
   title: string;
   tagline: string;
@@ -17,62 +16,62 @@ interface Project {
 }
 
 const projects: Project[] = [
-    {
-        title: "AURUM BLISS",
-        tagline: "Cosmetic Sourcing & Mastery",
-        category: "Luxury Beauty",
-        url: "https://four-pillars-cosmetics.netlify.app/",
-        image: "/project-four-pillars.jpg"
-    },
-    {
-        title: "LUMIÈRE NOIRE",
-        tagline: "Scented Rituals & Elegance",
-        category: "Retail / Lifestyle",
-        url: "https://boisterous-sable-18bb0c.netlify.app/",
-        image: "/project-olivara.jpg"
-    },
-    {
-        title: "NOIR ATLAS",
-        tagline: "Cinematic Digital Depth",
-        category: "Brand Concept",
-        url: "https://moonlit-maamoul-cfcdd5.netlify.app/",
-        image: "/project-noir-atlas.jpg"
-    },
-    {
-        title: "AURUM AUTOMOTIVE",
-        tagline: "Premier Showroom Experience",
-        category: "Automotive",
-        url: "https://car-care-hub.netlify.app/",
-        image: "/project-carcare.jpg"
-    },
-    {
-        title: "THE VERTICAL",
-        tagline: "Premium Elevator Systems",
-        category: "Industrial / Luxury",
-        url: "https://wonderful-nasturtium-105135.netlify.app/",
-        image: "/project-elevators.jpg"
-    },
-    {
-        title: "ELITE ESTATES",
-        tagline: "High-End Dubai Penthouses",
-        category: "Real Estate",
-        url: "https://deft-sundae-510258.netlify.app/",
-        image: "/project-elite-estates.jpg"
-    },
-    {
-        title: "AURUM GEMS",
-        tagline: "Timeless Fine Jewelry",
-        category: "Retail / Luxury",
-        url: "https://papaya-vacherin-fee6b2.netlify.app/",
-        image: "/project-eclat.jpg"
-    },
-    {
-        title: "AURUM ENERGY",
-        tagline: "Intelligent Power Analytics",
-        category: "Tech / Infrastructure",
-        url: "https://admirable-custard-0ec2e2.netlify.app/",
-        image: "/project-energylink.jpg"
-    }
+  {
+    title: "AURUM BLISS",
+    tagline: "Cosmetic Sourcing & Mastery",
+    category: "Luxury Beauty",
+    url: "https://four-pillars-cosmetics.netlify.app/",
+    image: "/project-four-pillars.jpg"
+  },
+  {
+    title: "LUMIÈRE NOIRE",
+    tagline: "Scented Rituals & Elegance",
+    category: "Retail / Lifestyle",
+    url: "https://boisterous-sable-18bb0c.netlify.app/",
+    image: "/project-olivara.jpg"
+  },
+  {
+    title: "NOIR ATLAS",
+    tagline: "Cinematic Digital Depth",
+    category: "Brand Concept",
+    url: "https://moonlit-maamoul-cfcdd5.netlify.app/",
+    image: "/project-noir-atlas.jpg"
+  },
+  {
+    title: "AURUM AUTOMOTIVE",
+    tagline: "Premier Showroom Experience",
+    category: "Automotive",
+    url: "https://car-care-hub.netlify.app/",
+    image: "/project-carcare.jpg"
+  },
+  {
+    title: "THE VERTICAL",
+    tagline: "Premium Elevator Systems",
+    category: "Industrial / Luxury",
+    url: "https://wonderful-nasturtium-105135.netlify.app/",
+    image: "/project-elevators.jpg"
+  },
+  {
+    title: "ELITE ESTATES",
+    tagline: "High-End Dubai Penthouses",
+    category: "Real Estate",
+    url: "https://deft-sundae-510258.netlify.app/",
+    image: "/project-elite-estates.jpg"
+  },
+  {
+    title: "AURUM GEMS",
+    tagline: "Timeless Fine Jewelry",
+    category: "Retail / Luxury",
+    url: "https://papaya-vacherin-fee6b2.netlify.app/",
+    image: "/project-eclat.jpg"
+  },
+  {
+    title: "AURUM ENERGY",
+    tagline: "Intelligent Power Analytics",
+    category: "Tech / Infrastructure",
+    url: "https://admirable-custard-0ec2e2.netlify.app/",
+    image: "/project-energylink.jpg"
+  }
 ];
 
 const services = [
@@ -91,7 +90,6 @@ const testimonials = [
 ];
 
 // --- Components ---
-
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -113,16 +111,16 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-12">
           {['Expertise', 'Gallery', 'Atelier', 'Contact'].map((item) => (
-            <a 
-              key={item} 
-              href={`#${item.toLowerCase()}`} 
+            <a
+              key={item}
+              href={`#${item.toLowerCase()}`}
               className="text-[10px] uppercase tracking-[0.3em] font-medium opacity-60 hover:opacity-100 hover:text-luxury-gold transition-all duration-300"
             >
               {item}
             </a>
           ))}
-          <a 
-            href="#contact" 
+          <a
+            href="#contact"
             className="px-6 py-2 border border-luxury-gold/30 rounded-full text-[10px] uppercase tracking-[0.2em] hover:bg-luxury-gold hover:text-luxury-black transition-all duration-500"
           >
             Get a Quote
@@ -137,7 +135,7 @@ const Navbar = () => {
 
       <AnimatePresence>
         {isOpen && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scaleY: 0 }}
             animate={{ opacity: 1, scaleY: 1 }}
             exit={{ opacity: 0, scaleY: 0 }}
@@ -145,7 +143,14 @@ const Navbar = () => {
           >
             <div className="flex flex-col space-y-8 px-10 py-16 text-luxury-beige">
               {['Expertise', 'Gallery', 'Atelier', 'Contact'].map((item) => (
-                <a key={item} href={`#${item.toLowerCase()}`} onClick={() => setIsOpen(false)} className="text-2xl font-serif italic hover:text-luxury-gold transition-colors">{item}</a>
+                <a 
+                  key={item} 
+                  href={`#${item.toLowerCase()}`} 
+                  onClick={() => setIsOpen(false)} 
+                  className="text-2xl font-serif italic hover:text-luxury-gold transition-colors"
+                >
+                  {item}
+                </a>
               ))}
             </div>
           </motion.div>
@@ -164,10 +169,10 @@ export default function App() {
   return (
     <div className="bg-luxury-black text-luxury-beige min-h-screen">
       <div className="noise-overlay fixed inset-0 pointer-events-none z-50 opacity-[0.03]" />
-      
+
       {/* Floating Action Button */}
       <div className="fixed bottom-10 right-10 z-[100] hidden md:block">
-        <motion.a 
+        <motion.a
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           href="#contact"
@@ -179,71 +184,75 @@ export default function App() {
 
       <Navbar />
 
-      {/* Hero Section */}
-      <section id="home" className="relative min-h-screen flex items-center overflow-hidden border-b border-luxury-gold/10 pt-28 md:pt-36">
-  <motion.div style={{ opacity, scale }} className="absolute inset-0 z-0">
-    <img 
-      src="/hero-bg.jpg" 
-      className="w-full h-full object-cover opacity-40 grayscale contrast-125" 
-      alt="Cinematic Backdrop"
-    />
-    <div className="absolute inset-0 cinematic-bg blend-overlay" />
-    <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-luxury-black to-transparent" />
-  </motion.div>
-
-  <div className="container mx-auto px-6 md:px-12 relative z-20">
-    <div className="max-w-5xl space-y-10">
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+      {/* Hero Section - Fixed Text Overlap */}
+      <section 
+        id="home" 
+        className="relative min-h-screen flex items-center overflow-hidden border-b border-luxury-gold/10 pt-20 md:pt-28 lg:pt-36 pb-12 md:pb-0"
       >
-        <span className="text-luxury-gold font-mono text-[10px] uppercase tracking-[0.5em] mb-6 block">
-          Dubai / Premium Digital Concierge
-        </span>
+        <motion.div style={{ opacity, scale }} className="absolute inset-0 z-0">
+          <img
+            src="/hero-bg.jpg"
+            className="w-full h-full object-cover opacity-40 grayscale contrast-125"
+            alt="Cinematic Backdrop"
+          />
+          <div className="absolute inset-0 cinematic-bg blend-overlay" />
+          <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-luxury-black to-transparent" />
+        </motion.div>
 
-        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[9rem] font-serif leading-[0.9] tracking-tight text-white uppercase max-w-[12ch]">
-          We Fix <br />
-          <span className="italic relative inline-block">
-            Digital Artifacts.
-            <motion.div 
-              initial={{ scaleX: 0 }}
-              animate={{ scaleX: 1 }}
-              transition={{ delay: 1, duration: 1.5 }}
-              className="absolute -bottom-2 left-0 w-full h-[1px] bg-luxury-gold/40 origin-left"
-            />
-          </span>
-        </h1>
-      </motion.div>
-      
-      <motion.div 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.5, duration: 1 }}
-        className="flex flex-col md:flex-row gap-8 items-start"
-      >
-        <p className="max-w-md text-base md:text-lg text-luxury-beige/60 font-light leading-relaxed">
-          Ordinary websites won't suffice for extraordinary brands. We craft high-converting, cinematic digital experiences tailored for Dubai’s elite market.
-        </p>
+        <div className="container mx-auto px-6 md:px-12 relative z-20">
+          <div className="max-w-5xl space-y-8 md:space-y-10">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <span className="text-luxury-gold font-mono text-[10px] uppercase tracking-[0.5em] mb-6 block">
+                Dubai / Premium Digital Concierge
+              </span>
 
-        <div className="flex gap-6">
-          <a href="#gallery" className="group flex items-center gap-4 text-[11px] uppercase tracking-[0.3em] font-bold text-luxury-gold">
-            <span>View Our Work</span>
-            <div className="w-8 h-[1px] bg-luxury-gold group-hover:w-16 transition-all duration-500" />
-          </a>
+              {/* FIXED HERO HEADING */}
+              <h1 className="text-[2.75rem] sm:text-6xl md:text-7xl lg:text-[5.5rem] xl:text-[7rem] 2xl:text-[9rem] 
+                           font-serif leading-[0.88] tracking-[-0.04em] text-white uppercase">
+                We Fix <br />
+                <span className="italic relative inline-block">
+                  Digital Artifacts.
+                  <motion.div
+                    initial={{ scaleX: 0 }}
+                    animate={{ scaleX: 1 }}
+                    transition={{ delay: 1, duration: 1.5 }}
+                    className="absolute -bottom-2 left-0 w-full h-[1px] bg-luxury-gold/40 origin-left"
+                  />
+                </span>
+              </h1>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5, duration: 1 }}
+              className="flex flex-col md:flex-row gap-8 items-start"
+            >
+              <p className="max-w-md text-base md:text-lg text-luxury-beige/60 font-light leading-relaxed">
+                Ordinary websites won't suffice for extraordinary brands. We craft high-converting, cinematic digital experiences tailored for Dubai’s elite market.
+              </p>
+              <div className="flex gap-6">
+                <a href="#gallery" className="group flex items-center gap-4 text-[11px] uppercase tracking-[0.3em] font-bold text-luxury-gold">
+                  <span>View Our Work</span>
+                  <div className="w-8 h-[1px] bg-luxury-gold group-hover:w-16 transition-all duration-500" />
+                </a>
+              </div>
+            </motion.div>
+          </div>
         </div>
-      </motion.div>
-    </div>
-  </div>
 
-  <motion.div 
-    animate={{ y: [0, 10, 0] }}
-    transition={{ repeat: Infinity, duration: 2 }}
-    className="absolute bottom-10 left-1/2 -translate-x-1/2 text-luxury-gold opacity-30"
-  >
-    <ChevronDown size={24} />
-  </motion.div>
-</section>
+        <motion.div
+          animate={{ y: [0, 10, 0] }}
+          transition={{ repeat: Infinity, duration: 2 }}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 text-luxury-gold opacity-30"
+        >
+          <ChevronDown size={24} />
+        </motion.div>
+      </section>
 
       {/* Expertise Section */}
       <section id="expertise" className="py-24 md:py-48 bg-luxury-dark border-b border-luxury-gold/10">
@@ -251,16 +260,18 @@ export default function App() {
           <div className="grid lg:grid-cols-3 gap-24">
             <div className="lg:col-span-1 space-y-10">
               <span className="text-luxury-gold font-mono text-[10px] uppercase tracking-[0.4em]">Expertise</span>
-              <h2 className="text-5xl md:text-7xl font-serif text-white leading-none">Solving <br /><span className="italic">Complexity</span> With Style.</h2>
+              <h2 className="text-5xl md:text-7xl font-serif text-white leading-none">
+                Solving <br /><span className="italic">Complexity</span> With Style.
+              </h2>
               <p className="text-luxury-beige/50 font-light leading-relaxed">
                 From luxury automotive showfloors to private energy analytics platforms, we build tools that empower and impress.
               </p>
             </div>
-            
+
             <div className="lg:col-span-2 grid md:grid-cols-2 gap-x-16 gap-y-20">
               {services.map((s, i) => (
-                <motion.div 
-                  key={i} 
+                <motion.div
+                  key={i}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -284,7 +295,6 @@ export default function App() {
             <span className="text-luxury-gold font-mono text-[10px] uppercase tracking-[0.5em] block">The Gallery</span>
             <h2 className="text-6xl md:text-9xl font-serif text-white">Digital <span className="italic">Sculptures.</span></h2>
           </div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
             {projects.map((p, i) => (
               <motion.a
@@ -295,9 +305,9 @@ export default function App() {
                 whileHover={{ y: -10 }}
                 className="group relative h-[600px] bg-luxury-dark overflow-hidden border border-luxury-gold/10"
               >
-                <img 
-                  src={p.image} 
-                  alt={p.title} 
+                <img
+                  src={p.image}
+                  alt={p.title}
                   className="w-full h-full object-cover grayscale brightness-50 group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000"
                   referrerPolicy="no-referrer"
                 />
@@ -327,16 +337,18 @@ export default function App() {
               className="relative"
             >
               <div className="aspect-[4/5] overflow-hidden border border-luxury-gold/30 p-4 bg-luxury-black rotate-2 shadow-2xl">
-                <img 
-                  src="about-office.jpg" 
-                  alt="Creative Studio" 
+                <img
+                  src="about-office.jpg"
+                  alt="Creative Studio"
                   className="w-full h-full object-cover grayscale brightness-75"
                   referrerPolicy="no-referrer"
                 />
               </div>
               <div className="absolute -bottom-10 -right-10 glass p-8 border border-luxury-gold/20 hidden xl:block">
                 <Quote className="text-luxury-gold/20 mb-4" size={32} />
-                <p className="text-sm italic text-luxury-beige/70 max-w-[200px]">"We don't build websites. We build the future of luxury commerce."</p>
+                <p className="text-sm italic text-luxury-beige/70 max-w-[200px]">
+                  "We don't build websites. We build the future of luxury commerce."
+                </p>
                 <span className="block mt-4 text-[9px] uppercase tracking-widest text-luxury-gold">— Foundational Vision</span>
               </div>
             </motion.div>
@@ -369,16 +381,20 @@ export default function App() {
       <section className="py-24 md:py-48 bg-luxury-black">
         <div className="container mx-auto px-6 md:px-12">
           <div className="flex flex-col md:flex-row gap-20 items-end mb-32">
-            <h2 className="text-5xl md:text-8xl font-serif text-white flex-1 leading-none uppercase tracking-tighter">Voices Of <br /><span className="italic text-luxury-gold text-right">Prestige.</span></h2>
-            <p className="max-w-xs text-luxury-beige/40 text-sm font-light uppercase tracking-widest leading-loose">The words of our partners matter more than any award we could win.</p>
+            <h2 className="text-5xl md:text-8xl font-serif text-white flex-1 leading-none uppercase tracking-tighter">
+              Voices Of <br /><span className="italic text-luxury-gold text-right">Prestige.</span>
+            </h2>
+            <p className="max-w-xs text-luxury-beige/40 text-sm font-light uppercase tracking-widest leading-loose">
+              The words of our partners matter more than any award we could win.
+            </p>
           </div>
-          
+
           <div className="grid md:grid-cols-3 gap-16">
             {testimonials.map((t, i) => (
-              <motion.div 
-                key={i} 
-                initial={{ opacity: 0 }} 
-                whileInView={{ opacity: 1 }} 
+              <motion.div
+                key={i}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 className="space-y-8"
               >
                 <div className="flex gap-1">
@@ -398,7 +414,7 @@ export default function App() {
       {/* Final CTA */}
       <section id="contact" className="py-32 md:py-64 bg-luxury-dark relative flex flex-col items-center justify-center overflow-hidden border-t border-luxury-gold/10">
         <div className="absolute inset-0 z-0">
-           <img src="input_file_1.png" className="w-full h-full object-cover grayscale opacity-[0.05] invert" alt="" />
+          <img src="input_file_1.png" className="w-full h-full object-cover grayscale opacity-[0.05] invert" alt="" />
         </div>
         <div className="container mx-auto px-6 relative z-10 text-center space-y-16">
           <h2 className="text-6xl md:text-[12rem] font-serif text-white tracking-tighter leading-[0.8] uppercase italic">
@@ -426,7 +442,7 @@ export default function App() {
                 Crafting Excellence Since 2018.
               </p>
             </div>
-            
+
             <div className="space-y-8">
               <h5 className="text-[10px] uppercase tracking-[0.4em] font-bold">Menu</h5>
               <div className="flex flex-col gap-4 text-xs font-light tracking-[0.2em] text-white/40">
@@ -459,12 +475,12 @@ export default function App() {
               </div>
             </div>
           </div>
-          
+
           <div className="mt-32 pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
             <span className="text-[10px] tracking-[0.5em] text-white/20">© 2026 FIX WEBSITE DESIGN DUBAI</span>
             <div className="flex gap-10 text-[9px] tracking-[0.3em] font-bold opacity-30">
-               <span>PRIVACY</span>
-               <span>TERMS</span>
+              <span>PRIVACY</span>
+              <span>TERMS</span>
             </div>
           </div>
         </div>
