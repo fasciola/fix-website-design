@@ -167,7 +167,7 @@ const Portfolio3D: React.FC = () => {
       emissive: new THREE.Color(0x2a2218),
       emissiveIntensity: 0.06,
       transparent: true,
-      opacity: 0.98
+      opacity: 1
       });
       materialList.push(material);
 
