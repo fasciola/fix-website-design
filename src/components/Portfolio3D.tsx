@@ -120,7 +120,7 @@ const Portfolio3D: React.FC = () => {
     keyLight.position.set(2, 3, 6);
     scene.add(keyLight);
 
-    const coreLight = new THREE.PointLight(0xffaa33, 2.0, 20);
+    const coreLight = new THREE.PointLight(0x3dbbff, 2.2, 20);
     coreLight.position.set(0, 0.5, 0);
     scene.add(coreLight);
 
@@ -135,8 +135,8 @@ const Portfolio3D: React.FC = () => {
 
       const gradient = ctx.createRadialGradient(16, 16, 0, 16, 16, 16);
       gradient.addColorStop(0, 'rgba(255,255,255,1)');
-      gradient.addColorStop(0.4, 'rgba(255,200,100,0.9)');
-      gradient.addColorStop(1, 'rgba(100,100,255,0)');
+      gradient.addColorStop(0.4, 'rgba(80,190,255,0.95)');
+      gradient.addColorStop(1, 'rgba(0,120,255,0)');
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, 32, 32);
 
@@ -201,12 +201,12 @@ const Portfolio3D: React.FC = () => {
     geometryList.push(mainRingGeo);
 
     const mainRingMat = new THREE.MeshStandardMaterial({
-      color: 0xffaa33,
-      emissive: new THREE.Color(0xff5500),
-      emissiveIntensity: 3.5,
-      transparent: true,
-      opacity: 0.9
-    });
+    color: 0x3dbbff,
+    emissive: new THREE.Color(0x0066ff),
+    emissiveIntensity: 3.5,
+    transparent: true,
+    opacity: 0.9
+  });
     materialList.push(mainRingMat);
 
     const mainRing = new THREE.Mesh(mainRingGeo, mainRingMat);
@@ -217,12 +217,12 @@ const Portfolio3D: React.FC = () => {
     geometryList.push(innerRingGeo);
 
     const innerRingMat = new THREE.MeshStandardMaterial({
-      color: 0x88aaff,
-      emissive: new THREE.Color(0x3366cc),
-      emissiveIntensity: 2.5,
-      transparent: true,
-      opacity: 0.7
-    });
+  color: 0x7fdcff,
+  emissive: new THREE.Color(0x1e90ff),
+  emissiveIntensity: 3.0,
+  transparent: true,
+  opacity: 0.8
+});
     materialList.push(innerRingMat);
 
     const innerRing = new THREE.Mesh(innerRingGeo, innerRingMat);
@@ -263,10 +263,10 @@ const Portfolio3D: React.FC = () => {
     geometryList.push(energyCoreGeo);
 
     const energyCoreMat = new THREE.MeshStandardMaterial({
-      color: 0xffaa55,
-      emissive: new THREE.Color(0xff6600),
-      emissiveIntensity: 4.0
-    });
+  color: 0x6fe8ff,
+  emissive: new THREE.Color(0x0088ff),
+  emissiveIntensity: 4.5
+});
     materialList.push(energyCoreMat);
 
     const energyCore = new THREE.Mesh(energyCoreGeo, energyCoreMat);
@@ -279,10 +279,10 @@ const Portfolio3D: React.FC = () => {
       geometryList.push(orbGeo);
 
       const orbMat = new THREE.MeshStandardMaterial({
-        color: 0xffaa88,
-        emissive: new THREE.Color(0xff4422),
-        emissiveIntensity: 3
-      });
+  color: 0x7fdcff,
+  emissive: new THREE.Color(0x0077ff),
+  emissiveIntensity: 3.2
+});
       materialList.push(orbMat);
 
       const orb = new THREE.Mesh(orbGeo, orbMat);
