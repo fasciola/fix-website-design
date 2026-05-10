@@ -65,24 +65,8 @@ const services = [
 ];
 
 const testimonials = [
-  {
-    quote:
-      'Fix Website Design transformed our showroom presence. The site feels as premium as the Ferraris we sell.',
-    name: 'Ahmed Al-Maktoum',
-    role: 'Director, Aurum Automotive'
-  },
-  {
-    quote:
-      'Finally, a studio in Dubai that understands the nuance of luxury. Our conversions rose by 40% in two months.',
-    name: 'Sarah Jenkins',
-    role: 'Founder, Aurum Bliss'
-  },
-  {
-    quote:
-      'The cinematic approach they take is unmatched. Our penthouse portfolio has never looked more desirable.',
-    name: 'Marcus Vane',
-    role: 'CEO, Elite Estates'
-  }
+  
+  
 ];
 const ScrollLightRing = () => {
   const { scrollYProgress } = useScroll();
