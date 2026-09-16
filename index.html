@@ -4,10 +4,42 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Four Pillars Web Design</title>
+    <style>
+      .four-pillars-credit {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 14px 20px 18px;
+        background: #050505;
+        border-top: 1px solid rgba(255,255,255,.05);
+      }
+      .four-pillars-credit a {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        color: rgba(255,255,255,.38);
+        text-decoration: none;
+        font: 500 10px/1.2 Inter, system-ui, sans-serif;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+        transition: color .25s ease, opacity .25s ease;
+      }
+      .four-pillars-credit a:hover { color: #d6a14f; }
+      .four-pillars-credit img {
+        height: 20px;
+        width: auto;
+        opacity: .78;
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <div class="four-pillars-credit">
+      <a href="https://4pillarsweb.online/" target="_blank" rel="noopener noreferrer" aria-label="Website by Four Pillars Web Design">
+        <span>Website by Four Pillars</span>
+        <img src="https://4pillarsweb.online/logo.png" alt="Four Pillars Web Design" loading="lazy" />
+      </a>
+    </div>
   </body>
 </html>
-
