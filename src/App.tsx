@@ -20,15 +20,15 @@ function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-line bg-white">
+    <header className="sticky top-0 z-40 border-b border-white/10 bg-ink text-white">
       <div className="wrap flex h-18 items-center justify-between gap-4">
-        <a href="#top" className="leading-tight">
-          <span className="block font-display text-xl font-extrabold">{business.name}</span>
-          <span className="block text-xs text-slate">{business.tagline}</span>
+        <a href="#top" className="grid gap-1">
+          <img src={asset('logo.png')} alt={business.name} width={492} height={92} className="h-8 w-auto" />
+          <span className="text-xs text-white/70">{business.tagline}</span>
         </a>
         <nav aria-label="Main" className="hidden items-center gap-7 text-sm font-medium lg:flex">
           {nav.map(([label, href]) => (
-            <a key={href} href={href} className="hover:text-brand">{label}</a>
+            <a key={href} href={href} className="hover:text-gold">{label}</a>
           ))}
         </nav>
         <div className="flex items-center gap-4">
@@ -36,7 +36,7 @@ function Header() {
             <Phone size={16} aria-hidden /> {business.phone}
           </a>
           <div className="hidden sm:block">
-            <a href={hello} {...external} className="btn btn-primary">
+            <a href={hello} {...external} className="btn btn-gold">
               <MessageCircle size={16} aria-hidden /> WhatsApp
             </a>
           </div>
@@ -46,7 +46,7 @@ function Header() {
         </div>
       </div>
       {open && (
-        <nav aria-label="Mobile" className="wrap grid gap-1 border-t border-line py-3 lg:hidden">
+        <nav aria-label="Mobile" className="wrap grid gap-1 border-t border-white/10 py-3 lg:hidden">
           {nav.map(([label, href]) => (
             <a key={href} href={href} onClick={() => setOpen(false)} className="py-2 font-medium">{label}</a>
           ))}
@@ -269,6 +269,7 @@ export default function App() {
 
       <footer className="bg-ink py-10 text-sm text-white/70">
         <div className="wrap grid gap-3">
+          <img src={asset('logo.png')} alt="" width={492} height={92} loading="lazy" className="mb-2 h-9 w-auto justify-self-start" />
           <p className="font-display text-lg font-bold text-white">{business.legalName}</p>
           <p lang="ar" dir="rtl" className="justify-self-start">{business.legalNameArabic}</p>
           <p>
