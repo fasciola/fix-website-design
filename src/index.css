@@ -1,74 +1,55 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --color-luxury-gold: #C5A059;
-  --color-luxury-beige: #F5F2ED;
-  --color-luxury-black: #050505;
-  --color-luxury-dark: #0A0A0A;
-  
-  --font-serif: "Georgia", serif;
-  --font-sans: "Helvetica Neue", Arial, ui-sans-serif, system-ui, sans-serif;
-  
-  --shadow-gold: 0 0 20px rgba(197, 160, 89, 0.15);
+  --color-ink: #0b2233;
+  --color-brand: #0e6670;
+  --color-gold: #e2b866;
+  --color-mist: #eef3f4;
+  --color-line: #d5dfe2;
+  --color-slate: #4a5d69;
+
+  --font-display: "Archivo", "Arial Narrow", Arial, sans-serif;
+  --font-sans: "Public Sans", ui-sans-serif, system-ui, sans-serif;
 }
 
 @layer base {
   html {
-    @apply scroll-smooth;
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
   }
-  
+
   body {
-    @apply bg-luxury-black text-luxury-beige font-sans antialiased selection:bg-luxury-gold selection:text-luxury-black overflow-x-hidden;
+    @apply bg-white font-sans text-ink antialiased;
   }
 
-  /* Custom Scrollbar */
-  ::-webkit-scrollbar {
-    width: 6px;
+  :focus-visible {
+    outline: 3px solid var(--color-gold);
+    outline-offset: 2px;
   }
-  ::-webkit-scrollbar-track {
-    @apply bg-luxury-black;
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; }
   }
-  ::-webkit-scrollbar-thumb {
-    @apply bg-zinc-800 rounded-full hover:bg-zinc-700 transition-colors;
+}
+
+@layer components {
+  .wrap { @apply mx-auto w-full max-w-6xl px-5 sm:px-8; }
+  .section { @apply py-16 lg:py-24; }
+  .title { @apply font-display text-3xl font-extrabold text-balance sm:text-4xl; }
+  .lead { @apply mt-4 max-w-2xl text-lg text-slate; }
+
+  .btn { @apply inline-flex cursor-pointer items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-bold transition-colors; }
+  .btn-primary { @apply bg-brand text-white hover:bg-ink; }
+  .btn-gold { @apply bg-gold text-ink hover:bg-white; }
+  .btn-ghost { @apply border border-white/40 text-white hover:border-white hover:bg-white/10; }
+
+  .field { @apply grid gap-1 text-sm font-semibold; }
+  .field :is(input, select, textarea) {
+    @apply w-full min-w-0 rounded-md border border-line bg-white px-3 py-2.5 text-base font-normal text-ink focus:border-brand;
   }
-}
 
-/* Texture Overlay */
-.noise-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  opacity: 0.03;
-  z-index: 9999;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  /* Rubber-stamp counter on the document checklist */
+  .stamp { @apply -rotate-3 rounded border-2 border-brand px-3 py-1 text-sm font-bold text-brand; }
 }
-
-/* Cinematic Background Gradient from Theme */
-.cinematic-bg {
-  position: absolute;
-  inset: 0;
-  background: 
-    radial-gradient(circle at 20% 30%, #1a1510 0%, transparent 50%),
-    radial-gradient(circle at 80% 70%, #0a0a1a 0%, transparent 50%);
-  z-index: 0;
-}
-
-/* Glass Effect */
-.glass {
-  @apply backdrop-blur-xl bg-luxury-black/60 border-b border-luxury-gold/15;
-}
-
-/* Mobile height fix */
-.min-h-dvh {
-  min-height: 100dvh;
-}
-
-/* Fixed Badge from Theme */
-.badge-fixed {
-  @apply fixed top-1/2 right-[-40px] -translate-y-1/2 -rotate-90 bg-luxury-gold text-luxury-black px-5 py-2 text-[10px] font-bold uppercase tracking-[2px] z-[100] hidden lg:block;
-}
-

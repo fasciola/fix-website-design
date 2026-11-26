@@ -2,33 +2,38 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Four Pillars Web Design</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>PRO Services in Dubai | Four Pillars</title>
+    <meta name="description" content="PRO services in Dubai: visa processing, trade licence renewal, MOHRE work permits, Emirates ID and document attestation for companies and families." />
     <style>
       .four-pillars-credit {
         display: flex;
         align-items: center;
         justify-content: center;
         padding: 14px 20px 18px;
-        background: #050505;
-        border-top: 1px solid rgba(255,255,255,.05);
+        background: #0b2233;
+        border-top: 1px solid rgba(255,255,255,.08);
       }
       .four-pillars-credit a {
         display: inline-flex;
         align-items: center;
         gap: 9px;
-        color: rgba(255,255,255,.38);
+        color: rgba(255,255,255,.6);
         text-decoration: none;
         font: 500 10px/1.2 Inter, system-ui, sans-serif;
         letter-spacing: .12em;
         text-transform: uppercase;
         transition: color .25s ease, opacity .25s ease;
       }
-      .four-pillars-credit a:hover { color: #d6a14f; }
+      .four-pillars-credit a:hover { color: #e2b866; }
       .four-pillars-credit img {
         height: 20px;
         width: auto;
         opacity: .78;
+      }
+      /* Keep the credit clear of the phone call/WhatsApp bar */
+      @media (max-width: 639px) {
+        .four-pillars-credit { padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px)); }
       }
     </style>
   </head>
