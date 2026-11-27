@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Check, Mail, MapPin, Menu, MessageCircle, Phone, Plus, X } from 'lucide-react';
+import AjmanPackages from './components/AjmanPackages';
 import LeadForm from './components/LeadForm';
 import { business, telHref, waHref } from './config';
 import { checklists, faqs, jurisdictions, reasons, serviceOptions, services, steps } from './content';
@@ -10,6 +11,7 @@ const external = { target: '_blank', rel: 'noopener noreferrer' } as const;
 
 const nav = [
   ['Services', '#services'],
+  ['Ajman licence', '#ajman'],
   ['Documents', '#documents'],
   ['Process', '#process'],
   ['FAQ', '#faq'],
@@ -32,7 +34,7 @@ function Header() {
           ))}
         </nav>
         <div className="flex items-center gap-4">
-          <a href={telHref} className="hidden items-center gap-2 text-sm font-semibold md:flex">
+          <a href={telHref} className="hidden items-center gap-2 text-sm font-semibold md:flex lg:hidden xl:flex">
             <Phone size={16} aria-hidden /> {business.phone}
           </a>
           <div className="hidden sm:block">
@@ -176,6 +178,8 @@ export default function App() {
             </div>
           </div>
         </section>
+
+        <AjmanPackages />
 
         <Documents />
 

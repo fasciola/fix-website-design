@@ -52,7 +52,7 @@ export const services = [
   },
 ];
 
-export const serviceOptions = [...services.map((s) => s.title), 'Something else'];
+export const serviceOptions = [...services.map((s) => s.title), 'Ajman licence package', 'Something else'];
 
 // Typical starting documents. Authorities change requirements, so the page says to confirm.
 export const checklists = [
